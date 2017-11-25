@@ -15,6 +15,7 @@ else
 		if [[ $? = '1' ]]; then
 			killall iTunes
 			diskutil unmount /Volumes/OrangePekoe
+			echo "Unmount teapot samba disk | color=red"
 		fi
 	else
 		exit 0
