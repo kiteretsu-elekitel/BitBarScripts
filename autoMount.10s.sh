@@ -17,6 +17,13 @@ else
 			diskutil unmount /Volumes/OrangePekoe
 			echo "Unmount teapot samba disk | color=red"
 		fi
+	elif [[ -d /Volumes/BrokenPekoe ]]; then
+		diskutil unmount /Volumes/BrokenPekoe
+		if [[ $? = '1' ]]; then
+			killall vlc
+			diskutil unmount /Volumes/BrokenPekoe
+			echo "Unmount teapot samba disk | color=red"
+		fi
 	else
 		exit 0
 	fi
