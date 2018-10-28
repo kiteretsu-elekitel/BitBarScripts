@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo ""
 stat=$(ioreg -l | grep -i ExternalConnected | awk '{print $5}')
 
 if [[ $stat = 'Yes' ]]; then
