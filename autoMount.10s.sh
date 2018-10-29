@@ -6,7 +6,14 @@ if [[ $stat = 'Yes' ]]; then
 	if [[ -d /Volumes/OrangePekoe ]]; then
 		exit 0
 	else
-		osascript -e "try" -e "mount volume \"smb://teapot\"" -e "end try"
+		osascript -e "try" -e "mount volume \"smb://teapot/OrangePekoe\"" -e "end try"
+		echo "Mount teapot samba disk"
+	fi
+
+	if [[ -d /Volumes/BrokenPekoe ]]; then
+		exit 0
+	else
+		osascript -e "try" -e "mount volume \"smb://teapot/BrokenPekoe\"" -e "end try"
 		echo "Mount teapot samba disk"
 	fi
 else
