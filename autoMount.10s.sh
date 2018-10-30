@@ -1,10 +1,10 @@
 #!/bin/bash
-echo ""
 
 WIFINAME=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | grep " SSID" | awk -F ': ' '{print $2}')
 if [[ $(echo $WIFINAME | grep "AirMac") = "" ]]; then
 	exit 0
 fi
+
 stat=$(ioreg -l | grep -i ExternalConnected | awk '{print $5}')
 
 if [[ $stat = 'Yes' ]]; then
